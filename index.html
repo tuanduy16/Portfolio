@@ -3,111 +3,225 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Duy Pham | Portfolio</title>
+  <title>Duy Pham // Portfolio</title>
+  <meta name="description" content="Duy Pham — backend & AI engineer. CS (MS & BS) at the University of Rochester." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <nav class="nav container">
-      <a class="brand" href="#top">Duy Pham</a>
+  <!-- boot sequence (skipped on repeat visits / reduced motion) -->
+  <div class="boot" id="boot" aria-hidden="true">
+    <pre id="boot-log"></pre>
+    <button class="boot-skip" id="boot-skip" type="button">[ skip ]</button>
+  </div>
+
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <nav class="nav container" aria-label="Main">
+      <a class="brand" href="#top"><span class="brand-mark">DP</span><span class="brand-text">Duy Pham</span></a>
       <ul>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#projects">01_projects</a></li>
+        <li><a href="#experience">02_experience</a></li>
+        <li><a href="#skills">03_skills</a></li>
+        <li><a href="#contact">04_contact</a></li>
       </ul>
     </nav>
-    <div class="container hero-content" id="top">
-      <p class="eyebrow">Computer Science Student</p>
-      <h1>Backend-focused developer building practical, scalable software.</h1>
-      <p>
-        I'm a CS student at the University of Rochester with experience in Java Spring Boot APIs,
-        MySQL optimization, Docker, and Python web applications.
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="#projects">View Projects</a>
-        <a class="btn" href="#contact">Contact Me</a>
-      </div>
-    </div>
   </header>
 
-  <main>
-    <section class="container section" id="experience">
-      <h2>Experience</h2>
-      <article>
-        <h3>Software Engineering Intern · Viettel Networks</h3>
-        <p class="meta">Jun 2025 - Aug 2025 · Hanoi, Vietnam</p>
-        <ul>
-          <li>Built Spring Boot REST APIs for NetMind chatbot platform serving 5000+ daily users.</li>
-          <li>Integrated Fluentd + ELK in Docker and reduced debugging time by 40%.</li>
-          <li>Optimized queries and reduced backend response times by 30%.</li>
-        </ul>
-      </article>
-      <article>
-        <h3>Software Engineering Intern · VNPT IT</h3>
-        <p class="meta">Jun 2024 - Aug 2024 · Quang Binh, Vietnam</p>
-        <ul>
-          <li>Improved MySQL project management system supporting 500+ employee records.</li>
-          <li>Handled migration, backup, and schema updates to ensure reliability.</li>
-        </ul>
-      </article>
-      <article>
-        <h3>Teaching Assistant · University of Rochester</h3>
-        <p class="meta">Jan 2024 - Jun 2024 · Rochester, NY</p>
-        <ul>
-          <li>Mentored 30+ students in Unreal Engine, C++, and Blueprint coursework.</li>
-        </ul>
-      </article>
-      <article>
-        <h3>Tutor · The Learning Center</h3>
-        <p class="meta">Nov 2023 - Present · Rochester, NY</p>
-        <ul>
-          <li>Supported CS and Math learning, helping students improve exam grades by ~30%.</li>
-        </ul>
-      </article>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="hero-main">
+        <p class="eyebrow"><span class="blink">▮</span> Rochester, NY</p>
+        <h1 class="glitch" data-text="DUY PHAM">DUY PHAM</h1>
+        <p class="role">&gt; <span id="role-typer">aspiring software engineer</span><span class="caret">_</span></p>
+        <p class="lede">
+          I'm an aspiring software engineer studying computer science at the University of Rochester.
+          I enjoy building reliable backend systems and exploring AI and computer networks, and I'm always looking for
+          opportunities to learn, collaborate, and grow.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">view projects</a>
+          <a class="btn btn-ghost" href="./DuyPham_Resume.pdf" download>resume.pdf ↓</a>
+        </div>
+      </div>
+
+      <aside class="hud panel" aria-label="Profile summary">
+        <div class="hud-head"><span>Profile</span></div>
+        <dl>
+          <div><dt>School</dt><dd>University of Rochester</dd></div>
+          <div><dt>Degree</dt><dd>MS &amp; BS Computer Science</dd></div>
+          <div><dt>Graduation</dt><dd>May 2027</dd></div>
+          <div><dt>GPA</dt><dd>3.6 / 4.0 · Dean's List</dd></div>
+        </dl>
+      </aside>
     </section>
 
-    <section class="container section" id="projects">
-      <h2>Projects</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>DAYS Distributed Version Control System</h3>
-          <p>Implemented a modular DVCS with 14 commands and 25+ integration tests.</p>
-          <p class="meta">Java · Distributed Systems · Team Project</p>
-        </article>
-        <article class="card">
-          <h3>URFood</h3>
-          <p>Built a Python web app with 180,000+ scraped menu entries and faster data retrieval.</p>
-          <p class="meta">Python · BeautifulSoup · Databases</p>
-        </article>
-        <article class="card">
-          <h3>Pawntastic</h3>
-          <p>Created a game-playing bot with Minimax and Alpha-Beta pruning for better decisions.</p>
-          <p class="meta">Java · AI Algorithms</p>
-        </article>
+    <!-- PROJECTS -->
+    <section class="section container" id="projects">
+      <h2 class="section-title"><span>01</span> projects</h2>
+
+      <article class="project feature panel">
+        <div class="project-info">
+          <p class="tag">featured // multi-agent ai</p>
+          <h3>Voyagent</h3>
+          <p class="project-sub">Multi-agent AI travel planner</p>
+          <p>
+            An orchestrator dispatches five specialist agents — flights, hotels, weather, activities, pricing —
+            in parallel with <code>asyncio</code>, then stitches their results into a day-by-day itinerary with
+            booking links to 10 sites.
+          </p>
+          <ul class="bullets">
+            <li>Real data via tool calling &amp; web search: Open-Meteo, Wikipedia, OpenStreetMap, ECB, SerpApi.</li>
+            <li>Budget feedback loop re-runs flight/hotel searches under price caps when a plan runs over.</li>
+            <li>Self-correcting Pydantic validation, code-computed totals, unverified links filtered out.</li>
+            <li>Offline tests replay the full pipeline on scripted model responses.</li>
+          </ul>
+          <p class="chips"><span>Python</span><span>asyncio</span><span>Claude API</span><span>Pydantic</span><span>Tool calling</span></p>
+          <a class="btn btn-small" href="https://github.com/tuanduy16/voyagent" target="_blank" rel="noreferrer">source ↗</a>
+        </div>
+
+        <div class="sim" aria-label="Simulation of Voyagent's agent orchestration">
+          <div class="sim-head">
+            <span>// live_sim: orchestrator</span>
+            <button class="btn btn-small" id="sim-run" type="button">▶ run plan</button>
+          </div>
+          <div class="sim-stage" id="sim-stage">
+            <svg class="sim-wires" id="sim-wires" aria-hidden="true"></svg>
+            <div class="node core" id="node-core" data-agent="orchestrator">ORCHESTRATOR</div>
+            <div class="node agent" data-agent="flights">flights</div>
+            <div class="node agent" data-agent="hotels">hotels</div>
+            <div class="node agent" data-agent="weather">weather</div>
+            <div class="node agent" data-agent="activities">activities</div>
+            <div class="node agent" data-agent="pricing">pricing</div>
+          </div>
+          <pre class="sim-log" id="sim-log" aria-live="polite">&gt; awaiting trip request. press run.</pre>
+        </div>
+      </article>
+
+      <article class="project panel">
+        <div class="project-info">
+          <p class="tag">team of 4 // systems</p>
+          <h3>DAYS</h3>
+          <p class="project-sub">Distributed version control system</p>
+          <p>
+            A modular DVCS built from scratch — 2,000+ lines across 8 core modules, designed around information
+            hiding so each piece could be reasoned about (and tested) on its own.
+          </p>
+          <ul class="bullets">
+            <li>Full Git-like command set — init, commit, branch, merge, push, pull and more — implemented and tested.</li>
+            <li>100% pass rate across 25+ integration tests, including remote sync.</li>
+          </ul>
+          <p class="chips"><span>Rust</span><span>Distributed systems</span><span>Software design</span></p>
+          <a class="btn btn-small" href="https://github.com/AnakinHuang/days_distributed_version_control_system" target="_blank" rel="noreferrer">source ↗</a>
+        </div>
+        <div class="cmd-wall" aria-label="DAYS commands">
+          <p class="cmd-wall-head">$ days --help</p>
+          <ul id="cmd-wall">
+            <li>init</li><li>clone</li><li>add</li><li>remove</li><li>status</li><li>diff</li><li>cat</li><li>commit</li>
+            <li>log</li><li>checkout</li><li>branch</li><li>merge</li><li>heads</li><li>push</li><li>pull</li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="archive">
+        <p class="archive-head">// archive</p>
+        <a class="archive-item" href="https://github.com/tuanduy16/Pawntastic_Game" target="_blank" rel="noreferrer">
+          <span>Pawntastic</span><span class="muted">game-playing bot · minimax + alpha-beta · Java</span><span>↗</span>
+        </a>
       </div>
     </section>
 
-    <section class="container section" id="education">
-      <h2>Education & Skills</h2>
-      <p><strong>University of Rochester</strong> · B.S. Computer Science · Expected May 2027 · GPA: 3.56/4.00</p>
-      <p><strong>Languages:</strong> Java, JavaScript, Python, Kotlin, HTML/CSS, R, C, Rust, SQL</p>
-      <p><strong>Tools:</strong> Django, Flask, Spring Boot, React.js, Git, Docker, AWS</p>
+    <!-- EXPERIENCE -->
+    <section class="section container" id="experience">
+      <h2 class="section-title"><span>02</span> experience</h2>
+      <ol class="timeline">
+        <li class="mission panel">
+          <div class="mission-head">
+            <h3>Viettel Networks <span class="role-name">// Software Engineering Intern</span></h3>
+            <p class="meta">Jun 2025 – Aug 2025 · Hanoi, VN</p>
+          </div>
+          <ul class="bullets">
+            <li>Built and deployed 8 RESTful APIs (Java, Spring Boot, MySQL) for user and bot permission management on the NetMind platform — role-based access control and input validation, serving 5,000+ daily users across 4 bots.</li>
+            <li>Integrated a centralized logging stack (Fluentd, Elasticsearch, Kibana, Docker) across backend services, parsing log levels into searchable fields for dashboards and alerts — cutting debugging time ~40% for 40+ engineers.</li>
+            <li>Optimized bot and user data queries over 10K+ records, reducing response times ~30%.</li>
+          </ul>
+          <p class="chips"><span>Java</span><span>Spring Boot</span><span>MySQL</span><span>ELK</span><span>Fluentd</span><span>Docker</span></p>
+        </li>
+        <li class="mission panel">
+          <div class="mission-head">
+            <h3>VNPT IT <span class="role-name">// Software Engineering Intern</span></h3>
+            <p class="meta">Jun 2024 – Aug 2024 · Quang Binh, VN</p>
+          </div>
+          <ul class="bullets">
+            <li>Worked in a 5-person team on a project management system (C++, MySQL, SQLite) tracking 500+ employee records and 50+ active project plans, used daily by 6 departments.</li>
+            <li>Optimized 10+ SQL queries and report workflows in C++, cutting report generation time ~25%.</li>
+            <li>Owned database maintenance across 20+ tables: data migration, automated daily backups, schema updates.</li>
+          </ul>
+          <p class="chips"><span>C++</span><span>MySQL</span><span>SQLite</span></p>
+        </li>
+        <li class="mission panel">
+          <div class="mission-head">
+            <h3>The Learning Center <span class="role-name">// CS &amp; Math Tutor</span></h3>
+            <p class="meta">Nov 2023 – Present · Rochester, NY</p>
+          </div>
+          <ul class="bullets">
+            <li>Tutored 100+ students in Java, object-oriented programming, and dynamic programming, helping raise exam scores ~30%.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <div class="edu panel">
+        <p class="tag">education</p>
+        <h3>University of Rochester</h3>
+        <p>Master &amp; Bachelor of Science in Computer Science · GPA 3.6/4.0 · Dean's List · May 2027</p>
+        <p class="muted">AI · Design &amp; Analysis of Efficient Algorithms · Software Design · Computer Organization · Database Systems · Computer Networks</p>
+      </div>
     </section>
+
+    <!-- SKILLS -->
+    <section class="section container" id="skills">
+      <h2 class="section-title"><span>03</span> skills</h2>
+      <div class="skills">
+        <div class="slot panel">
+          <h3>languages</h3>
+          <p class="chips"><span>Java</span><span>Python</span><span>JavaScript</span><span>C/C++</span><span>Kotlin</span><span>Rust</span><span>SQL</span><span>R</span><span>HTML/CSS</span></p>
+        </div>
+        <div class="slot panel">
+          <h3>frameworks &amp; libs</h3>
+          <p class="chips"><span>Spring Boot</span><span>FastAPI</span><span>Django</span><span>Flask</span><span>React.js</span><span>PyTorch</span><span>Scikit-learn</span><span>Pandas</span></p>
+        </div>
+        <div class="slot panel">
+          <h3>cloud &amp; data</h3>
+          <p class="chips"><span>AWS</span><span>Azure</span><span>MySQL</span><span>Elasticsearch</span><span>MongoDB</span></p>
+        </div>
+        <div class="slot panel">
+          <h3>tools</h3>
+          <p class="chips"><span>Git</span><span>Docker</span><span>Kubernetes</span><span>Fluentd</span><span>Kibana</span><span>Linux</span><span>Postman</span><span>Maven</span></p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="container section" id="contact">
-    <h2>Contact</h2>
-    <p>Phone: <a href="tel:+13479400140">(347) 940-0140</a></p>
-    <p>Email: <a href="mailto:tuanduy601@gmail.com">tuanduy601@gmail.com</a></p>
-    <p>
-      <a href="https://www.linkedin.com/in/duy-pham-8b5576228/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BfmBzbzBmSGyiP8D1G2lddA%3D%3D" target="_blank" rel="noreferrer">LinkedIn</a>
-      ·
-      <a href="https://github.com/tuanduy16" target="_blank" rel="noreferrer">GitHub</a>
-    </p>
+  <!-- CONTACT -->
+  <footer class="section container" id="contact">
+    <h2 class="section-title"><span>04</span> contact</h2>
+    <div class="contact panel">
+      <p class="contact-lede">Interested in backend, fullstack, infrastructure, or applied AI work? My inbox is open.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:tuanduy601@gmail.com">tuanduy601@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/duy-pham-8b5576228" target="_blank" rel="noreferrer">linkedin ↗</a>
+        <a class="btn" href="https://github.com/tuanduy16" target="_blank" rel="noreferrer">github ↗</a>
+        <a class="btn btn-ghost" href="tel:+13479400140">(347) 940-0140</a>
+      </div>
+    </div>
+    <p class="footnote">© <span id="year">2026</span> Duy Pham</p>
   </footer>
+
+  <script src="./script.js"></script>
 </body>
 </html>
